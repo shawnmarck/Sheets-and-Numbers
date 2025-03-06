@@ -7,169 +7,169 @@
             "position": "SB",
             "action_type": "rfi",
             "strategy": "exp40_7pos",
-            "tips": "Post-flop, play aggressively from SB after RFI with a tight range (premium pairs, strong aces) against loose players. C-bet often on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., J-T-9) to trap calling stations. With shallow stacks (20–50 BB), push for value; with deeper stacks (50–100 BB), be cautious of draws and overcalls."
+            "tips": "Post-flop, play aggressively from SB after RFI with a tight range (premium pairs, strong aces like AKs, AQs, AJs, ATs) against loose players. C-bet often on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., J-T-9) to trap calling stations. With shallow stacks (20–50 BB), push for value with top pairs; with deeper stacks (50–100 BB), be cautious of draws and overcalls, especially from their wide defense range."
         },
         {
             "position": "SB",
             "action_type": "facing_raise",
             "strategy": "exp40_7pos",
-            "tips": "After calling a raise from SB, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors). On paired boards (e.g., K-K-7), value bet thin with middle pairs against their overcalls. On draw-heavy boards (e.g., Q-J-8), check-raise bluffs to punish their loose calls. With 20–50 BB stacks, shove draws or top pairs; with 50–100 BB, control pot size to avoid bloating."
+            "tips": "After calling a raise from SB, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors like A4s–ATs, K7s–KQs). On paired boards (e.g., K-K-7), value bet thin with middle pairs against their overcalls. On draw-heavy boards (e.g., Q-J-8), check-raise bluffs to punish their loose calls. With 20–50 BB stacks, shove draws or top pairs; with 50–100 BB, control pot size to avoid bloating against their wide range."
         },
         {
             "position": "SB",
             "action_type": "vs_3bet",
             "strategy": "exp40_7pos",
-            "tips": "Facing a 3-bet from SB, your calling range is strong (QQ+, AJs+, AKo) but lighter than GTO to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-5) for value, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling."
+            "tips": "Facing a 3-bet from SB, your calling range is strong (QQ+, AJs+, AKo) but lighter than GTO to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-5) for value with top pairs or better, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling, especially with speculative hands."
         },
         {
             "position": "SB",
             "action_type": "vs_limp",
             "strategy": "exp40_7pos",
-            "tips": "After raising vs a limp from SB, play post-flop aggressively with a wide range (premium hands, suited aces) to exploit loose limpers. C-bet frequently on dry boards (e.g., A-7-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value; with 50–100 BB, be cautious of their deep-stack calling tendencies."
+            "tips": "After raising vs a limp from SB, play post-flop aggressively with a wide range (premium hands, suited aces, and offsuit hands like AJo) to exploit loose limpers. C-bet frequently on dry boards (e.g., A-7-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value with top pairs; with 50–100 BB, be cautious of their deep-stack calling tendencies, especially with draws."
         },
         {
             "position": "BB",
             "action_type": "rfi",
             "strategy": "exp40_7pos",
-            "tips": "Post-flop from BB after RFI, play cautiously with a tight range (premium pairs, strong aces) against loose players. C-bet on dry boards (e.g., K-6-3) for value, but check back on connected boards (e.g., J-T-8) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges."
+            "tips": "Post-flop from BB after RFI, play cautiously with a tight range (premium pairs, strong aces like AKs, AQs, AJs, ATs, and offsuit ATo) against loose players. C-bet on dry boards (e.g., K-6-3) for value, but check back on connected boards (e.g., J-T-8) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges, especially against deep-stack calls."
         },
         {
             "position": "BB",
             "action_type": "facing_raise",
             "strategy": "exp40_7pos",
-            "tips": "After calling a raise from BB, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-7-2), value bet thin with middle pairs. On draw-heavy boards (e.g., Q-J-9), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size to avoid bloating."
+            "tips": "After calling a raise from BB, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors, and offsuit hands like AJo, ATo, KQo). On safe boards (e.g., A-7-2), value bet thin with middle pairs or top pairs against their overcalls. On draw-heavy boards (e.g., Q-J-9), check-raise bluffs to punish their loose calls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size to avoid bloating against their wide range."
         },
         {
             "position": "BB",
             "action_type": "vs_3bet",
             "strategy": "exp40_7pos",
-            "tips": "Facing a 3-bet from BB, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., K-Q-4) for value, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling."
+            "tips": "Facing a 3-bet from BB, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets, including offsuit ATo. Post-flop, c-bet aggressively on most boards (e.g., K-Q-4) for value with top pairs or better, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling, especially with speculative hands."
         },
         {
             "position": "BB",
             "action_type": "vs_limp",
             "strategy": "exp40_7pos",
-            "tips": "After raising vs a limp from BB, play post-flop aggressively with a wide range (premium hands, suited aces) to exploit loose limpers. C-bet frequently on dry boards (e.g., A-6-3) for value, but check back on wet boards (e.g., 8-7-6) to trap their speculative hands. With 20–50 BB stacks, push for thin value; with 50–100 BB, watch for deep-stack overcalls."
+            "tips": "After raising vs a limp from BB, play post-flop aggressively with a wide range (premium hands, suited aces, and offsuit hands like AJo) to exploit loose limpers. C-bet frequently on dry boards (e.g., A-6-3) for value, but check back on wet boards (e.g., 8-7-6) to trap their speculative hands. With 20–50 BB stacks, push for thin value with top pairs; with 50–100 BB, watch for deep-stack overcalls, especially with draws."
         },
         {
             "position": "UTG",
             "action_type": "rfi",
             "strategy": "exp40_7pos",
-            "tips": "Post-flop from UTG after RFI, play cautiously with a tight range (premium pairs, top aces) against loose players. C-bet on dry boards (e.g., K-5-2) for value, but check back on connected boards (e.g., Q-J-T) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges."
+            "tips": "Post-flop from UTG after RFI, play cautiously with a tight range (premium pairs, top aces like AKs, AQs, AJs, ATs) against loose players. C-bet on dry boards (e.g., K-5-2) for value, but check back on connected boards (e.g., Q-J-T) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges, especially against deep-stack calls."
         },
         {
             "position": "UTG",
             "action_type": "facing_raise",
             "strategy": "exp40_7pos",
-            "tips": "After calling a raise from UTG, exploit loose players by playing post-flop with a balanced range (medium pairs, strong suited connectors). On safe boards (e.g., A-7-3), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size."
+            "tips": "After calling a raise from UTG, exploit loose players by playing post-flop with a balanced range (medium pairs, strong suited connectors like KTs, A7s–ATs). On safe boards (e.g., A-7-3), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size against their wide range."
         },
         {
             "position": "UTG",
             "action_type": "vs_3bet",
             "strategy": "exp40_7pos",
-            "tips": "Facing a 3-bet from UTG, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-6) for value, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling."
+            "tips": "Facing a 3-bet from UTG, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-6) for value with top pairs or better, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling, especially with speculative hands."
         },
         {
             "position": "UTG",
             "action_type": "vs_limp",
             "strategy": "exp40_7pos",
-            "tips": "After raising vs a limp from UTG, play post-flop cautiously with a tight range (premium hands) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value; with 50–100 BB, watch for deep-stack overcalls."
+            "tips": "After raising vs a limp from UTG, play post-flop cautiously with a tight range (premium hands like AA–77, AKs–ATs) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value with top pairs; with 50–100 BB, watch for deep-stack overcalls, especially with draws."
         },
         {
             "position": "UTG+1",
             "action_type": "rfi",
             "strategy": "exp40_7pos",
-            "tips": "Post-flop from UTG+1 after RFI, play cautiously with a tight range (premium pairs, strong aces) against loose players. C-bet on dry boards (e.g., K-6-3) for value, but check back on connected boards (e.g., Q-J-9) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges."
+            "tips": "Post-flop from UTG+1 after RFI, play cautiously with a tight range (premium pairs, strong aces like AKs, AQs, AJs, ATs) against loose players. C-bet on dry boards (e.g., K-6-3) for value, but check back on connected boards (e.g., Q-J-9) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges, especially against deep-stack calls."
         },
         {
             "position": "UTG+1",
             "action_type": "facing_raise",
             "strategy": "exp40_7pos",
-            "tips": "After calling a raise from UTG+1, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-7-2), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size."
+            "tips": "After calling a raise from UTG+1, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors like KJs, A6s–ATs). On safe boards (e.g., A-7-2), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size against their wide range."
         },
         {
             "position": "UTG+1",
             "action_type": "vs_3bet",
             "strategy": "exp40_7pos",
-            "tips": "Facing a 3-bet from UTG+1, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-5) for value, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling."
+            "tips": "Facing a 3-bet from UTG+1, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-5) for value with top pairs or better, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling, especially with speculative hands."
         },
         {
             "position": "UTG+1",
             "action_type": "vs_limp",
             "strategy": "exp40_7pos",
-            "tips": "After raising vs a limp from UTG+1, play post-flop cautiously with a tight range (premium hands) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., 8-7-6) to trap their speculative hands. With 20–50 BB stacks, push for thin value; with 50–100 BB, watch for deep-stack overcalls."
+            "tips": "After raising vs a limp from UTG+1, play post-flop cautiously with a tight range (premium hands like AA–66, AKs–ATs) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., 8-7-6) to trap their speculative hands. With 20–50 BB stacks, push for thin value with top pairs; with 50–100 BB, watch for deep-stack overcalls, especially with draws."
         },
         {
             "position": "MP",
             "action_type": "rfi",
             "strategy": "exp40_7pos",
-            "tips": "Post-flop from MP after RFI, play cautiously with a tight range (premium pairs, strong aces) against loose players. C-bet on dry boards (e.g., K-5-3) for value, but check back on connected boards (e.g., Q-J-8) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges."
+            "tips": "Post-flop from MP after RFI, play cautiously with a tight range (premium pairs, strong aces like AKs, AQs, AJs, ATs) against loose players. C-bet on dry boards (e.g., K-5-3) for value, but check back on connected boards (e.g., Q-J-8) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges, especially against deep-stack calls."
         },
         {
             "position": "MP",
             "action_type": "facing_raise",
             "strategy": "exp40_7pos",
-            "tips": "After calling a raise from MP, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-6-2), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size."
+            "tips": "After calling a raise from MP, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors like KTs, A5s–ATs). On safe boards (e.g., A-6-2), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size against their wide range."
         },
         {
             "position": "MP",
             "action_type": "vs_3bet",
             "strategy": "exp40_7pos",
-            "tips": "Facing a 3-bet from MP, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-4) for value, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling."
+            "tips": "Facing a 3-bet from MP, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-4) for value with top pairs or better, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling, especially with speculative hands."
         },
         {
             "position": "MP",
             "action_type": "vs_limp",
             "strategy": "exp40_7pos",
-            "tips": "After raising vs a limp from MP, play post-flop cautiously with a tight range (premium hands) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value; with 50–100 BB, watch for deep-stack overcalls."
+            "tips": "After raising vs a limp from MP, play post-flop cautiously with a tight range (premium hands like AA–55, AKs–ATs) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value with top pairs; with 50–100 BB, watch for deep-stack overcalls, especially with draws."
         },
         {
             "position": "CO",
             "action_type": "rfi",
             "strategy": "exp40_7pos",
-            "tips": "Post-flop from CO after RFI, play cautiously with a tight range (premium pairs, strong aces) against loose players. C-bet on dry boards (e.g., K-6-2) for value, but check back on connected boards (e.g., Q-J-9) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges."
+            "tips": "Post-flop from CO after RFI, play cautiously with a tight range (premium pairs, strong aces like AKs, AQs, AJs, ATs, and offsuit AJo) against loose players. C-bet on dry boards (e.g., K-6-2) for value, but check back on connected boards (e.g., Q-J-9) to avoid overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their wide ranges, especially against deep-stack calls."
         },
         {
             "position": "CO",
             "action_type": "facing_raise",
             "strategy": "exp40_7pos",
-            "tips": "After calling a raise from CO, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-7-3), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size."
+            "tips": "After calling a raise from CO, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors like JTs, A6s–ATs). On safe boards (e.g., A-7-3), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size against their wide range."
         },
         {
             "position": "CO",
             "action_type": "vs_3bet",
             "strategy": "exp40_7pos",
-            "tips": "Facing a 3-bet from CO, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-5) for value, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling."
+            "tips": "Facing a 3-bet from CO, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-5) for value with top pairs or better, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling, especially with speculative hands."
         },
         {
             "position": "CO",
             "action_type": "vs_limp",
             "strategy": "exp40_7pos",
-            "tips": "After raising vs a limp from CO, play post-flop cautiously with a tight range (premium hands) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., 8-7-6) to trap their speculative hands. With 20–50 BB stacks, push for thin value; with 50–100 BB, watch for deep-stack overcalls."
+            "tips": "After raising vs a limp from CO, play post-flop cautiously with a tight range (premium hands like AA–44, AKs–ATs, AJo) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., 8-7-6) to trap their speculative hands. With 20–50 BB stacks, push for thin value with top pairs; with 50–100 BB, watch for deep-stack overcalls, especially with draws."
         },
         {
             "position": "BTN",
             "action_type": "rfi",
             "strategy": "exp40_7pos",
-            "tips": "Post-flop from BTN after RFI, play aggressively with a wide range (premium pairs, strong aces) to exploit loose players. C-bet on dry boards (e.g., K-5-2) for value, but check back on connected boards (e.g., Q-J-8) to trap overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their deep-stack calls."
+            "tips": "Post-flop from BTN after RFI, play aggressively with a wide range (premium pairs, strong aces like AKs, AQs, AJs, ATs, and offsuit hands like ATo, KJo) to exploit loose players. C-bet on dry boards (e.g., K-5-2) for value, but check back on connected boards (e.g., Q-J-8) to trap overcalls. With 20–50 BB, shove top pairs; with 50–100 BB, control pot size against their deep-stack calls, especially against speculative hands."
         },
         {
             "position": "BTN",
             "action_type": "facing_raise",
             "strategy": "exp40_7pos",
-            "tips": "After calling a raise from BTN, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-6-3), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size."
+            "tips": "After calling a raise from BTN, exploit loose players by playing post-flop with a balanced range (medium pairs, suited connectors, and offsuit hands like JTs, A5s–ATs). On safe boards (e.g., A-6-3), value bet thin with middle pairs. On draw-heavy boards (e.g., K-Q-J), check-raise bluffs to punish overcalls. With 20–50 BB, shove draws or top pairs; with 50–100 BB, manage pot size against their wide range."
         },
         {
             "position": "BTN",
             "action_type": "vs_3bet",
             "strategy": "exp40_7pos",
-            "tips": "Facing a 3-bet from BTN, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets. Post-flop, c-bet aggressively on most boards (e.g., A-K-4) for value, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling."
+            "tips": "Facing a 3-bet from BTN, your calling range is strong (QQ+, AJs+, AKo) but lighter to exploit loose 3-bets, including offsuit AJo. Post-flop, c-bet aggressively on most boards (e.g., A-K-4) for value with top pairs or better, but fold to multiple bets on draw-heavy boards (e.g., J-T-9) unless you hit top pair or better. With 20–50 BB, shove for value; with 50–100 BB, be cautious of their wide range overcalling, especially with speculative hands."
         },
         {
             "position": "BTN",
             "action_type": "vs_limp",
             "strategy": "exp40_7pos",
-            "tips": "After raising vs a limp from BTN, play post-flop aggressively with a wide range (premium hands, suited aces) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value; with 50–100 BB, watch for deep-stack overcalls."
+            "tips": "After raising vs a limp from BTN, play post-flop aggressively with a wide range (premium hands, suited aces, and offsuit hands like KQo, AJo) to exploit loose limpers. C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to trap their speculative hands. With 20–50 BB stacks, push for thin value with top pairs; with 50–100 BB, watch for deep-stack overcalls, especially with draws."
         }
     ]
 }

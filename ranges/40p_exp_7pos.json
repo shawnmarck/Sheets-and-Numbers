@@ -13,9 +13,9 @@
                     "open": [
                         "AA", "KK", "QQ", "JJ", "TT", "99", "88",
                         "AKs", "AQs", "AJs", "ATs",
-                        "AKo", "AQo", "AJo", "ATo", "KQs", "KQo"
+                        "AKo", "AQo", "KQs", "KQo"
                     ],
-                    "patterns": ["88+", "AQs+", "ATo+", "KQs+", "KQo"]
+                    "patterns": ["88+", "AQs+", "KQs+", "KQo"]
                 },
                 "utg_add": {
                     "open": ["77", "A9s", "A8s", "KTs", "QJs"]
@@ -27,16 +27,16 @@
                     "open": ["55", "A5s", "A4s", "KTs", "Q9s"]
                 },
                 "co_add": {
-                    "open": ["44", "A3s", "A2s", "K9s", "Q8s", "JTs"]
+                    "open": ["44", "A3s", "A2s", "K9s", "Q8s", "JTs", "AJo"]
                 },
                 "btn_add": {
-                    "open": ["33", "22", "K8s", "Q7s", "J9s", "T9s", "98s"]
+                    "open": ["33", "22", "K8s", "Q7s", "J9s", "T9s", "98s", "ATo", "KJo"]
                 },
                 "sb_add": {
-                    "open": ["K7s", "Q6s", "J8s", "T8s", "97s", "87s"]
+                    "open": ["K7s", "Q6s", "J8s", "T8s", "97s", "87s", "AJo"]
                 },
                 "bb_add": {
-                    "open": ["K6s", "Q5s", "J7s", "T7s", "96s", "86s", "76s"]
+                    "open": ["K6s", "Q5s", "J7s", "T7s", "96s", "86s", "76s", "ATo"]
                 }
             }
         },
@@ -72,7 +72,7 @@
                     "threeBet": ["77"]
                 },
                 "bb_add": {
-                    "call": ["A3s", "K6s", "Q7s", "J9s"],
+                    "call": ["A3s", "K6s", "Q7s", "J9s", "AJo", "ATo", "KQo"],
                     "threeBet": ["66"]
                 }
             }
@@ -101,7 +101,7 @@
                     "fourBet": []
                 },
                 "btn_add": {
-                    "call": ["33", "A5s", "K8s", "QTs", "JTs"],
+                    "call": ["33", "A5s", "K8s", "QTs", "JTs", "AJo"],
                     "fourBet": ["QQ"]
                 },
                 "sb_add": {
@@ -109,7 +109,7 @@
                     "fourBet": ["JJ"]
                 },
                 "bb_add": {
-                    "call": ["A3s", "K6s", "Q8s", "T9s"],
+                    "call": ["A3s", "K6s", "Q8s", "T9s", "ATo"],
                     "fourBet": ["TT"]
                 }
             }
@@ -138,7 +138,7 @@
                     "raise": ["33"]
                 },
                 "btn_add": {
-                    "call": ["T8o", "97o", "87o"],
+                    "call": ["T8o", "97o", "87o", "KQo"],
                     "raise": ["22"]
                 },
                 "sb_add": {
@@ -146,7 +146,7 @@
                     "raise": []
                 },
                 "bb_add": {
-                    "call": ["A8o", "K8o", "Q8o"],
+                    "call": ["A8o", "K8o", "Q8o", "AJo"],
                     "raise": []
                 }
             }

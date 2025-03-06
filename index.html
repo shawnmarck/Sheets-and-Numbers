@@ -475,9 +475,9 @@
         let currentStrategy = null;
         const allPositions = ['SB', 'BB', 'UTG', 'UTG+1', 'MP', 'CO', 'BTN'];
         
-        // Load range data and tips
         async function loadRangeData() {
             try {
+                console.log('Loading range data...');
                 // Load both GTO and exploitative strategies
                 const [gtoRangeResponse, expRangeResponse, tipsResponse] = await Promise.all([
                     fetch('ranges/40p_gto_7pos.json'),
@@ -489,22 +489,28 @@
                 const expData = await expRangeResponse.json();
                 tipsData = await tipsResponse.json();
                 
+                console.log('Range data loaded:', { gto: !!gtoData, exp: !!expData });
+
                 // Verify metadata and structure for both strategies
                 if (!gtoData.metadata || !gtoData.ranges || !expData.metadata || !expData.ranges) {
                     throw new Error('Invalid range file structure');
                 }
 
-                // Store both strategies in rangeData
+                // Store both strategies in rangeData with clear naming
                 rangeData = {
                     'GTO 7-Position': gtoData,
                     'EXP 7-Position': expData
                 };
+
+                console.log('Strategies initialized:', Object.keys(rangeData));
 
                 // Update strategy buttons and initialize UI
                 updateStrategyButtons();
                 initializeUI();
             } catch (error) {
                 console.error('Error loading data:', error);
+                // Display error message to user
+                document.getElementById('tipsContent').textContent = 'Error loading range data. Please check the console for details.';
             }
         }
 
@@ -542,8 +548,11 @@
             strategyGroup.appendChild(gtoButton);
             strategyGroup.appendChild(expButton);
             
-            // Set initial strategy
+            // Set initial strategy and ensure it's properly initialized
             currentStrategy = 'GTO 7-Position';
+            
+            // Show the legend by default
+            document.querySelector('.legend-container').style.display = 'flex';
         }
 
         function initializeUI() {
@@ -654,7 +663,7 @@
 
         function getCumulativeRange(action, position) {
             if (!rangeData || !currentStrategy || !position) {
-                console.log('Missing required data:', { rangeData: !!rangeData, currentStrategy, position });
+                console.error('Missing required data:', { rangeData: !!rangeData, currentStrategy, position });
                 return new Map();
             }
 
@@ -662,7 +671,7 @@
             const data = rangeData[currentStrategy]?.ranges?.[action]?.[vpipKey];
             
             if (!data) {
-                console.log('No data found for:', { strategy: currentStrategy, action, vpipKey });
+                console.error('No data found for:', { strategy: currentStrategy, action, vpipKey });
                 return new Map();
             }
 
@@ -673,7 +682,7 @@
             const currentPosIndex = positionsOrder.indexOf(normalizedPosition);
 
             if (currentPosIndex === -1) {
-                console.log('Invalid position:', position);
+                console.error('Invalid position:', position);
                 return range;
             }
 
@@ -683,7 +692,7 @@
                     // For RFI, use the 'open' array
                     if (data.base.open) {
                         data.base.open.forEach(hand => {
-                            range.set(hand, 'raise');
+                            range.set(normalizeHand(hand), 'raise');
                         });
                     }
                 } else {
@@ -691,7 +700,7 @@
                     ['call', 'threeBet', 'fourBet', 'raise'].forEach(actionType => {
                         if (data.base[actionType]) {
                             data.base[actionType].forEach(hand => {
-                                range.set(hand, actionType);
+                                range.set(normalizeHand(hand), actionType);
                             });
                         }
                     });
@@ -706,24 +715,24 @@
                         // For RFI positions, handle both array and object formats
                         if (Array.isArray(data[posKey])) {
                             data[posKey].forEach(hand => {
-                                range.set(hand, 'raise');
+                                range.set(normalizeHand(hand), 'raise');
                             });
                         } else if (data[posKey].open) {
                             data[posKey].open.forEach(hand => {
-                                range.set(hand, 'raise');
+                                range.set(normalizeHand(hand), 'raise');
                             });
                         }
                     } else {
                         // For other actions, handle both array and object formats
                         if (Array.isArray(data[posKey])) {
                             data[posKey].forEach(hand => {
-                                range.set(hand, 'call'); // Default to call if not specified
+                                range.set(normalizeHand(hand), 'call'); // Default to call if not specified
                             });
                         } else {
                             ['call', 'threeBet', 'fourBet', 'raise'].forEach(actionType => {
                                 if (data[posKey][actionType]) {
                                     data[posKey][actionType].forEach(hand => {
-                                        range.set(hand, actionType);
+                                        range.set(normalizeHand(hand), actionType);
                                     });
                                 }
                             });
@@ -735,9 +744,14 @@
             return range;
         }
 
+        // Helper function to ensure consistent hand notation
+        function normalizeHand(hand) {
+            return hand.trim();
+        }
+
         function updateDisplay() {
             if (!currentAction || !currentPosition) {
-                console.log('Missing action or position:', { currentAction, currentPosition });
+                console.error('Missing action or position:', { currentAction, currentPosition });
                 return;
             }
 
@@ -769,6 +783,12 @@
             });
 
             // Update patterns section
+            updatePatterns(range);
+            // Show the legend container
+            document.querySelector('.legend-container').style.display = 'flex';
+        }
+
+        function updatePatterns(range) {
             const patternsSection = document.querySelector('.patterns-section');
             const patternsContent = document.getElementById('patternsContent');
             
@@ -827,8 +847,10 @@
             }
         }
 
-        // Load data and initialize the application
-        loadRangeData();
+        // Initialize the application by loading range data
+        window.addEventListener('load', () => {
+            loadRangeData();
+        });
     </script>
 </body>
 </html> 
