@@ -27,7 +27,7 @@ The Poker Range Assistant is a web-based study tool designed to help No-Limit Ho
   - `40p_exp_7pos.json`: Exploitative ranges for 40% VPIP opponent (7-pos, 8-max).
   - `40p_gto_7pos_tips.json`: Post-flop advice for GTO ranges (40% VPIP, 7-pos).
   - `40p_exp_7pos_tips.json`: Post-flop advice for exploitative ranges (40% VPIP, 7-pos).
-- **Validation Scripts**: Includes Python (`validate_all_range_files.py`) and JavaScript (`range_validator.js`) scripts for validating range data, ensuring accuracy for study purposes.
+- **Validation Scripts**: Includes Python (`validate_ranges.py`) and JavaScript (`validate_ranges.js`) scripts for validating range data, ensuring accuracy for study purposes.
 
 ## Installation and Usage
 
@@ -53,8 +53,8 @@ The Poker Range Assistant is a web-based study tool designed to help No-Limit Ho
 
 5. **Range Data Validation**:
    Run validation scripts in the respective environments to ensure range files are correct for study:
-   - Python: `python validate_all_range_files.py`
-   - Node.js: `node validate_all_range_files.js`
+   - Python: `python validate_ranges.py`
+   - Node.js: `node validate_ranges.js`
 
 ## Development
 

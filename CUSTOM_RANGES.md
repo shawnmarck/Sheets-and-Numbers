@@ -98,8 +98,8 @@ The Poker Range Assistant supports importing custom range data via JSON files, w
 
 ### 4. **Validation**
    - Before importing, validate your custom range file using the provided validation scripts:
-     - Python: Run `python validate_all_range_files.py` in the repository root.
-     - JavaScript/Node.js: Run `node validate_all_range_files.js` (if available).
+     - Python: Run `python validate_ranges.py` in the repository root.
+     - JavaScript/Node.js: Run `node validate_ranges.js` (if available).
    - Ensure your ranges pass checks for:
      - Valid hand notation (2 chars for pairs, 3 chars for suited/offsuit with `s` or `o`).
      - No duplicate hands within or across positions.
