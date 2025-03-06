@@ -15,6 +15,10 @@ The Poker Range Assistant is a web-based study tool designed to help No-Limit Ho
 - **Post-Flop Tips**: Includes optional post-flop advice based on preflop configurations, loaded from JSON files, to enhance learning.
 - **Customizable**: Users can import their own custom range data via JSON files, allowing personalization for specific study needs or opponent profiles.
 
+## Screenshots
+  <img width="851" alt="image" src="https://github.com/user-attachments/assets/0fc6af26-91be-401a-9a41-df36627d563f" />
+
+
 ## Structure
 
 - **`index.html`**: Main application file containing HTML, CSS, and JavaScript for the study tool.
