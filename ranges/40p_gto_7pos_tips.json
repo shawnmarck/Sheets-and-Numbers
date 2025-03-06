@@ -1,0 +1,175 @@
+{
+    "version": "1.0",
+    "author": "Grok 3 (xAI)",
+    "description": "Post-flop advice for GTO ranges (40% VPIP) in 8-max poker",
+    "configurations": [
+        {
+            "position": "SB",
+            "action_type": "rfi",
+            "strategy": "gto40_7pos",
+            "tips": "Post-flop, play cautiously from SB after RFI with a tight range (premium pairs, strong aces). On dry boards (e.g., K-7-2 rainbow), c-bet for value with top pairs or better. On wet boards (e.g., J-T-9), check back frequently to control the pot and avoid being outdrawn. Be wary of BB’s defense range, which may include speculative hands."
+        },
+        {
+            "position": "SB",
+            "action_type": "facing_raise",
+            "strategy": "gto40_7pos",
+            "tips": "After calling a raise from SB, play post-flop with a balanced range (medium pairs, strong suited connectors). On paired boards (e.g., K-K-7), check-call with middle pairs but fold to aggression unless you have a strong draw. On coordinated boards (e.g., Q-J-8), consider check-raising with gutshots or overcards to extract value or bluff."
+        },
+        {
+            "position": "SB",
+            "action_type": "vs_3bet",
+            "strategy": "gto40_7pos",
+            "tips": "Facing a 3-bet from SB, your calling range is strong (QQ+, AJs+, AKo). Post-flop, c-bet aggressively on most boards with top pairs or better (e.g., A-K-5). On draw-heavy boards (e.g., K-Q-J), proceed cautiously—check-call with top pairs but fold to multiple bets unless you improve or have a strong draw."
+        },
+        {
+            "position": "SB",
+            "action_type": "vs_limp",
+            "strategy": "gto40_7pos",
+            "tips": "After raising vs a limp from SB, play post-flop with a wide but strong range (premium hands, suited aces). C-bet frequently on dry boards (e.g., A-7-2) for value, but check back on wet boards (e.g., 9-8-7) to avoid getting outdrawn by speculative hands. Be prepared for limper’s wide calling range."
+        },
+        {
+            "position": "BB",
+            "action_type": "rfi",
+            "strategy": "gto40_7pos",
+            "tips": "Post-flop from BB after RFI, play cautiously with your tight range (premium pairs, strong aces). C-bet on dry boards (e.g., K-6-3) with top pairs, but check back on connected boards (e.g., J-T-8) to avoid being outdrawn. Be mindful of SB/BTN’s wide defense ranges."
+        },
+        {
+            "position": "BB",
+            "action_type": "facing_raise",
+            "strategy": "gto40_7pos",
+            "tips": "After calling a raise from BB, play post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-7-2), check-call with middle pairs but fold to aggression. On draw-heavy boards (e.g., Q-J-9), consider check-raising with strong draws or top pairs to extract value or bluff."
+        },
+        {
+            "position": "BB",
+            "action_type": "vs_3bet",
+            "strategy": "gto40_7pos",
+            "tips": "Facing a 3-bet from BB, your calling range is strong (QQ+, AJs+, AKo). Post-flop, c-bet aggressively on most boards with top pairs or better (e.g., K-Q-4). On draw-heavy boards (e.g., J-T-9), check-call with top pairs but fold to multiple bets unless you have a strong draw or nutted hand."
+        },
+        {
+            "position": "BB",
+            "action_type": "vs_limp",
+            "strategy": "gto40_7pos",
+            "tips": "After raising vs a limp from BB, play post-flop with a wide but strong range (premium hands, suited aces). C-bet frequently on dry boards (e.g., A-6-3) for value, but check back on wet boards (e.g., 8-7-6) to avoid getting outdrawn by speculative hands. Watch for limper’s wide range."
+        },
+        {
+            "position": "UTG",
+            "action_type": "rfi",
+            "strategy": "gto40_7pos",
+            "tips": "Post-flop from UTG after RFI, play cautiously with your very tight range (premium pairs, top aces). C-bet on dry boards (e.g., K-5-2) with top pairs, but check back on connected boards (e.g., Q-J-T) to avoid being outdrawn. Be aware of later positions’ wide defense ranges."
+        },
+        {
+            "position": "UTG",
+            "action_type": "facing_raise",
+            "strategy": "gto40_7pos",
+            "tips": "After calling a raise from UTG, play post-flop with a balanced range (medium pairs, strong suited connectors). On safe boards (e.g., A-7-3), check-call with middle pairs but fold to aggression. On draw-heavy boards (e.g., K-Q-J), consider check-raising with strong draws or top pairs."
+        },
+        {
+            "position": "UTG",
+            "action_type": "vs_3bet",
+            "strategy": "gto40_7pos",
+            "tips": "Facing a 3-bet from UTG, your calling range is strong (QQ+, AJs+, AKo). Post-flop, c-bet aggressively on most boards with top pairs or better (e.g., A-K-6). On draw-heavy boards (e.g., J-T-9), check-call with top pairs but fold to multiple bets unless you have a strong draw."
+        },
+        {
+            "position": "UTG",
+            "action_type": "vs_limp",
+            "strategy": "gto40_7pos",
+            "tips": "After raising vs a limp from UTG, play post-flop with a tight range (premium hands). C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to avoid getting outdrawn. Be prepared for limper’s speculative range."
+        },
+        {
+            "position": "UTG+1",
+            "action_type": "rfi",
+            "strategy": "gto40_7pos",
+            "tips": "Post-flop from UTG+1 after RFI, play cautiously with your tight range (premium pairs, strong aces). C-bet on dry boards (e.g., K-6-3) with top pairs, but check back on connected boards (e.g., Q-J-9) to avoid being outdrawn. Watch for MP/CO’s defense ranges."
+        },
+        {
+            "position": "UTG+1",
+            "action_type": "facing_raise",
+            "strategy": "gto40_7pos",
+            "tips": "After calling a raise from UTG+1, play post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-7-2), check-call with middle pairs but fold to aggression. On draw-heavy boards (e.g., K-Q-J), consider check-raising with strong draws or top pairs."
+        },
+        {
+            "position": "UTG+1",
+            "action_type": "vs_3bet",
+            "strategy": "gto40_7pos",
+            "tips": "Facing a 3-bet from UTG+1, your calling range is strong (QQ+, AJs+, AKo). Post-flop, c-bet aggressively on most boards with top pairs or better (e.g., A-K-5). On draw-heavy boards (e.g., J-T-9), check-call with top pairs but fold to multiple bets unless you have a strong draw."
+        },
+        {
+            "position": "UTG+1",
+            "action_type": "vs_limp",
+            "strategy": "gto40_7pos",
+            "tips": "After raising vs a limp from UTG+1, play post-flop with a tight range (premium hands). C-bet frequently on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., 8-7-6) to avoid getting outdrawn. Be cautious of limper’s speculative range."
+        },
+        {
+            "position": "MP",
+            "action_type": "rfi",
+            "strategy": "gto40_7pos",
+            "tips": "Post-flop from MP after RFI, play cautiously with your tight range (premium pairs, strong aces). C-bet on dry boards (e.g., K-5-3) with top pairs, but check back on connected boards (e.g., Q-J-8) to avoid being outdrawn. Watch for CO/BTN’s defense ranges."
+        },
+        {
+            "position": "MP",
+            "action_type": "facing_raise",
+            "strategy": "gto40_7pos",
+            "tips": "After calling a raise from MP, play post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-6-2), check-call with middle pairs but fold to aggression. On draw-heavy boards (e.g., K-Q-J), consider check-raising with strong draws or top pairs."
+        },
+        {
+            "position": "MP",
+            "action_type": "vs_3bet",
+            "strategy": "gto40_7pos",
+            "tips": "Facing a 3-bet from MP, your calling range is strong (QQ+, AJs+, AKo). Post-flop, c-bet aggressively on most boards with top pairs or better (e.g., A-K-4). On draw-heavy boards (e.g., J-T-9), check-call with top pairs but fold to multiple bets unless you have a strong draw."
+        },
+        {
+            "position": "MP",
+            "action_type": "vs_limp",
+            "strategy": "gto40_7pos",
+            "tips": "After raising vs a limp from MP, play post-flop with a tight range (premium hands). C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to avoid getting outdrawn. Be prepared for limper’s speculative range."
+        },
+        {
+            "position": "CO",
+            "action_type": "rfi",
+            "strategy": "gto40_7pos",
+            "tips": "Post-flop from CO after RFI, play cautiously with your tight range (premium pairs, strong aces). C-bet on dry boards (e.g., K-6-2) with top pairs, but check back on connected boards (e.g., Q-J-9) to avoid being outdrawn. Watch for BTN/SB’s defense ranges."
+        },
+        {
+            "position": "CO",
+            "action_type": "facing_raise",
+            "strategy": "gto40_7pos",
+            "tips": "After calling a raise from CO, play post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-7-3), check-call with middle pairs but fold to aggression. On draw-heavy boards (e.g., K-Q-J), consider check-raising with strong draws or top pairs."
+        },
+        {
+            "position": "CO",
+            "action_type": "vs_3bet",
+            "strategy": "gto40_7pos",
+            "tips": "Facing a 3-bet from CO, your calling range is strong (QQ+, AJs+, AKo). Post-flop, c-bet aggressively on most boards with top pairs or better (e.g., A-K-5). On draw-heavy boards (e.g., J-T-9), check-call with top pairs but fold to multiple bets unless you have a strong draw."
+        },
+        {
+            "position": "CO",
+            "action_type": "vs_limp",
+            "strategy": "gto40_7pos",
+            "tips": "After raising vs a limp from CO, play post-flop with a tight range (premium hands). C-bet frequently on dry boards (e.g., K-7-2) for value, but check back on wet boards (e.g., 8-7-6) to avoid getting outdrawn. Be cautious of limper’s speculative range."
+        },
+        {
+            "position": "BTN",
+            "action_type": "rfi",
+            "strategy": "gto40_7pos",
+            "tips": "Post-flop from BTN after RFI, play cautiously with your tight range (premium pairs, strong aces). C-bet on dry boards (e.g., K-5-2) with top pairs, but check back on connected boards (e.g., Q-J-8) to avoid being outdrawn. Watch for SB/BB’s defense ranges."
+        },
+        {
+            "position": "BTN",
+            "action_type": "facing_raise",
+            "strategy": "gto40_7pos",
+            "tips": "After calling a raise from BTN, play post-flop with a balanced range (medium pairs, suited connectors). On safe boards (e.g., A-6-3), check-call with middle pairs but fold to aggression. On draw-heavy boards (e.g., K-Q-J), consider check-raising with strong draws or top pairs."
+        },
+        {
+            "position": "BTN",
+            "action_type": "vs_3bet",
+            "strategy": "gto40_7pos",
+            "tips": "Facing a 3-bet from BTN, your calling range is strong (QQ+, AJs+, AKo). Post-flop, c-bet aggressively on most boards with top pairs or better (e.g., A-K-4). On draw-heavy boards (e.g., J-T-9), check-call with top pairs but fold to multiple bets unless you have a strong draw."
+        },
+        {
+            "position": "BTN",
+            "action_type": "vs_limp",
+            "strategy": "gto40_7pos",
+            "tips": "After raising vs a limp from BTN, play post-flop with a wide but strong range (premium hands, suited aces). C-bet frequently on dry boards (e.g., K-8-2) for value, but check back on wet boards (e.g., 9-8-7) to avoid getting outdrawn. Be prepared for limper’s wide calling range."
+        }
+    ]
+}

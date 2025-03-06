@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Range Validator</title>
+</head>
+<body>
+    <h2>Range Validation Results</h2>
+    <pre id="output"></pre>
+
+    <script>
+        // Helper function to get all hands from a range section
+        function getAllHandsFromSection(section) {
+            const hands = new Set();
+            
+            // Handle arrays
+            if (Array.isArray(section)) {
+                section.forEach(hand => hands.add(hand));
+                return hands;
+            }
+            
+            // Handle objects with action types
+            ['open', 'call', 'threeBet', 'fourBet', 'raise'].forEach(actionType => {
+                if (section[actionType] && Array.isArray(section[actionType])) {
+                    section[actionType].forEach(hand => hands.add(hand));
+                }
+            });
+            
+            return hands;
+        }
+
+        // Function to get all hands for a specific action and position
+        function getAllHandsForActionPosition(data, action, position) {
+            const vpipKey = 'vpip_40';
+            const actionData = data.ranges[action][vpipKey];
+            const hands = new Set();
+            
+            // Add hands from base range
+            if (actionData.base) {
+                getAllHandsFromSection(actionData.base).forEach(hand => hands.add(hand));
+            }
+            
+            // Get position index
+            const positions = ['sb', 'bb', 'utg', 'utg1', 'mp', 'co', 'btn'];
+            const posIndex = positions.indexOf(position.toLowerCase());
+            
+            // Add hands from all positions up to and including current position
+            for (let i = 0; i <= posIndex; i++) {
+                const posKey = positions[i] + '_add';
+                if (actionData[posKey]) {
+                    getAllHandsFromSection(actionData[posKey]).forEach(hand => hands.add(hand));
+                }
+            }
+            
+            return hands;
+        }
+
+        // Test cases
+        const testCases = [
+            { action: 'vs_limp', position: 'btn', expectedHands: ['AKo', 'AKs'] },
+            { action: 'rfi', position: 'btn', expectedHands: ['AKs', 'AKo'] },
+            { action: 'facing_raise', position: 'btn', expectedHands: ['AKs', 'AKo'] },
+            { action: 'vs_3bet', position: 'btn', expectedHands: ['AKs', 'AKo'] }
+        ];
+
+        // Run tests when data is loaded
+        fetch('40p_gto_7pos.json')
+            .then(response => response.json())
+            .then(data => {
+                let output = '';
+                
+                testCases.forEach(({ action, position, expectedHands }) => {
+                    output += `\nTesting ${position.toUpperCase()} ${action}:\n`;
+                    const actualHands = getAllHandsForActionPosition(data, action, position);
+                    
+                    // Check if expected hands are present
+                    expectedHands.forEach(hand => {
+                        if (actualHands.has(hand)) {
+                            output += `✓ ${hand} is present\n`;
+                        } else {
+                            output += `✗ ${hand} is missing\n`;
+                        }
+                    });
+                    
+                    // Log all hands for this action/position
+                    output += `\nAll hands for ${position.toUpperCase()} ${action}:\n`;
+                    output += Array.from(actualHands).sort().join(', ') + '\n';
+                });
+                
+                document.getElementById('output').textContent = output;
+            })
+            .catch(error => {
+                document.getElementById('output').textContent = 'Error loading data: ' + error;
+            });
+    </script>
+</body>
+</html> 

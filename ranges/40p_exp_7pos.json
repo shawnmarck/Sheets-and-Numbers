@@ -1,0 +1,155 @@
+{
+    "version": "1.1",
+    "author": "Grok 3 (xAI)",
+    "description": "Exploitative ranges for a 40% VPIP loose micro/small stakes villain in 8-max poker",
+    "metadata": {
+        "positions": ["SB", "BB", "UTG", "UTG+1", "MP", "CO", "BTN"],
+        "supported_positions": ["SB", "BB", "UTG", "UTG+1", "MP", "CO", "BTN"]
+    },
+    "ranges": {
+        "rfi": {
+            "vpip_40": {
+                "base": {
+                    "open": [
+                        "AA", "KK", "QQ", "JJ", "TT", "99", "88",
+                        "AKs", "AQs", "AJs", "ATs",
+                        "AKo", "AQo", "AJo", "ATo", "KQs", "KQo"
+                    ],
+                    "patterns": ["88+", "AQs+", "ATo+", "KQs+", "KQo"]
+                },
+                "utg_add": {
+                    "open": ["77", "A9s", "A8s", "KTs", "QJs"]
+                },
+                "utg1_add": {
+                    "open": ["66", "A7s", "A6s", "KJs", "QTs"]
+                },
+                "mp_add": {
+                    "open": ["55", "A5s", "A4s", "KTs", "Q9s"]
+                },
+                "co_add": {
+                    "open": ["44", "A3s", "A2s", "K9s", "Q8s", "JTs"]
+                },
+                "btn_add": {
+                    "open": ["33", "22", "K8s", "Q7s", "J9s", "T9s", "98s"]
+                },
+                "sb_add": {
+                    "open": ["K7s", "Q6s", "J8s", "T8s", "97s", "87s"]
+                },
+                "bb_add": {
+                    "open": ["K6s", "Q5s", "J7s", "T7s", "96s", "86s", "76s"]
+                }
+            }
+        },
+        "facing_raise": {
+            "vpip_40": {
+                "base": {
+                    "call": ["TT", "99", "88", "77", "AQs", "AJs", "ATs", "KQs", "KJs", "QJs"],
+                    "call_patterns": ["77-99", "AQs+", "KQs+", "QJs"],
+                    "threeBet": ["AA", "KK", "QQ", "JJ", "AKs", "AKo", "AQs", "AQo"]
+                },
+                "utg_add": {
+                    "call": ["66", "A9s"],
+                    "threeBet": []
+                },
+                "utg1_add": {
+                    "call": ["55", "A8s"],
+                    "threeBet": []
+                },
+                "mp_add": {
+                    "call": ["44", "A7s", "KTs"],
+                    "threeBet": []
+                },
+                "co_add": {
+                    "call": ["33", "A6s", "K9s", "QTs"],
+                    "threeBet": ["TT"]
+                },
+                "btn_add": {
+                    "call": ["22", "A5s", "K8s", "Q9s", "JTs"],
+                    "threeBet": ["99", "88"]
+                },
+                "sb_add": {
+                    "call": ["A4s", "K7s", "Q8s", "T9s"],
+                    "threeBet": ["77"]
+                },
+                "bb_add": {
+                    "call": ["A3s", "K6s", "Q7s", "J9s"],
+                    "threeBet": ["66"]
+                }
+            }
+        },
+        "vs_3bet": {
+            "vpip_40": {
+                "base": {
+                    "call": ["QQ", "JJ", "TT", "99", "88", "AQs", "AJs", "ATs", "KQs", "AKo", "AQo"],
+                    "call_patterns": ["88-JJ", "AQs+", "KQs", "AKo", "AQo"],
+                    "fourBet": ["AA", "KK", "AKs", "AQs"]
+                },
+                "utg_add": {
+                    "call": ["77", "A9s"],
+                    "fourBet": []
+                },
+                "utg1_add": {
+                    "call": ["66", "A8s"],
+                    "fourBet": []
+                },
+                "mp_add": {
+                    "call": ["55", "A7s", "KTs"],
+                    "fourBet": []
+                },
+                "co_add": {
+                    "call": ["44", "A6s", "K9s", "QJs"],
+                    "fourBet": []
+                },
+                "btn_add": {
+                    "call": ["33", "A5s", "K8s", "QTs", "JTs"],
+                    "fourBet": ["QQ"]
+                },
+                "sb_add": {
+                    "call": ["22", "A4s", "K7s", "Q9s"],
+                    "fourBet": ["JJ"]
+                },
+                "bb_add": {
+                    "call": ["A3s", "K6s", "Q8s", "T9s"],
+                    "fourBet": ["TT"]
+                }
+            }
+        },
+        "vs_limp": {
+            "vpip_40": {
+                "base": {
+                    "call": ["A9o", "A8o", "A7o", "A6o", "A5o", "A4o", "A3o", "A2o", "K9o", "K8o", "Q9o", "Q8o", "J9o"],
+                    "call_patterns": ["A2o-A9o", "K8o-K9o", "Q8o-Q9o", "J9o"],
+                    "raise": ["AA", "KK", "QQ", "JJ", "TT", "99", "88", "77", "AKs", "AQs", "AJs", "ATs", "AKo", "AQo", "AJo", "ATo", "KQs", "KJs", "KQo", "QJs"]
+                },
+                "utg_add": {
+                    "call": [],
+                    "raise": ["66"]
+                },
+                "utg1_add": {
+                    "call": [],
+                    "raise": ["55"]
+                },
+                "mp_add": {
+                    "call": ["T9o", "98o"],
+                    "raise": ["44"]
+                },
+                "co_add": {
+                    "call": ["K7o", "Q7o", "J8o"],
+                    "raise": ["33"]
+                },
+                "btn_add": {
+                    "call": ["T8o", "97o", "87o"],
+                    "raise": ["22"]
+                },
+                "sb_add": {
+                    "call": ["A9o", "K9o", "Q9o"],
+                    "raise": []
+                },
+                "bb_add": {
+                    "call": ["A8o", "K8o", "Q8o"],
+                    "raise": []
+                }
+            }
+        }
+    }
+}

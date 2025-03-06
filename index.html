@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheets and Numbers</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent: #4CAF50;
+            --accent-hover: #45a049;
+            --border: #404040;
+            --button-active: #2e7d32;
+            --call-color: #4CAF50;  /* Green */
+            --raise-color: #9C27B0; /* Purple */
+            --threeBet-color: #2196F3; /* Blue */
+            --fourBet-color: #FF9800; /* Orange */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .range-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tips-section {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .tips-section h3 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .tips-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .range-chart {
+            display: grid;
+            grid-template-columns: repeat(13, minmax(0, 1fr));
+            gap: 1px;
+            margin-top: 1rem;
+            background-color: var(--border);
+            padding: 1px;
+            border-radius: 4px;
+            max-width: 100%;
+            aspect-ratio: 1;
+            height: auto;
+            max-height: calc(100vh - 600px);
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .control-group {
+            background-color: var(--bg-secondary);
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .control-group h3 {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .vpip-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .vpip-label {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            min-width: 80px;
+        }
+
+        .strategy-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-grow: 1;
+        }
+
+        .strategy-buttons button {
+            flex: 1;
+        }
+
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.4rem;
+        }
+
+        .button-group.strategy-group {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .button-group button {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .button-group button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .button-group button.active {
+            background-color: var(--button-active);
+            border-color: var(--accent);
+        }
+
+        .output {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .range-display {
+            margin-top: 1rem;
+        }
+
+        .display-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .display-toggle input[type="checkbox"] {
+            accent-color: var(--accent);
+        }
+
+        .range-title {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .range-content {
+            color: var(--text-primary);
+            word-wrap: break-word;
+        }
+
+        .range-chart-cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-primary);
+            font-size: 0.65rem;
+            cursor: default;
+            user-select: none;
+            padding: 0;
+        }
+
+        .legend-container {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background-color: var(--bg-secondary);
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 1rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .legend-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .legend-section h4 {
+            color: var(--text-primary);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding-left: 0.25rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 3px;
+        }
+
+        .legend-color.raise {
+            background-color: var(--raise-color);
+        }
+
+        .legend-color.call {
+            background-color: var(--call-color);
+        }
+
+        .legend-color.threeBet {
+            background-color: var(--threeBet-color);
+        }
+
+        .legend-color.fourBet {
+            background-color: var(--fourBet-color);
+        }
+
+        .text-example.suited {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .text-example.offsuit {
+            color: var(--text-secondary);
+        }
+
+        .text-example.pair {
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        .patterns-section {
+            border-top: 1px solid var(--border);
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .patterns-content {
+            padding-left: 0.25rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        @media (min-width: 768px) {
+            .range-chart {
+                max-height: calc(100vh - 650px);
+                max-width: 600px;
+            }
+            
+            .range-chart-cell {
+                font-size: 0.7rem;
+            }
+        }
+
+        .range-chart-cell.suited {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .range-chart-cell.offsuit {
+            color: var(--text-secondary);
+        }
+
+        .range-chart-cell.pair {
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        .range-chart-cell.included {
+            background-color: var(--call-color);
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .range-chart-cell.included.threeBet {
+            background-color: var(--threeBet-color);
+        }
+
+        .range-chart-cell.included.fourBet {
+            background-color: var(--fourBet-color);
+        }
+
+        .range-chart-cell.included.raise {
+            background-color: var(--raise-color);
+        }
+
+        .range-chart-cell {
+            transition: all 0.2s ease;
+        }
+        .range-chart-cell.suited {
+            color: var(--accent);
+        }
+        .range-chart-cell.offsuit {
+            color: var(--text-secondary);
+        }
+        .range-chart-cell.pair {
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+        .range-chart-cell.included {
+            color: white !important;
+            font-weight: bold;
+        }
+        .range-chart-cell.included.raise {
+            background-color: var(--raise-color);
+        }
+        .range-chart-cell.included.call {
+            background-color: var(--call-color);
+        }
+        .range-chart-cell.included.threeBet {
+            background-color: var(--threeBet-color);
+        }
+        .range-chart-cell.included.fourBet {
+            background-color: var(--fourBet-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sheets and Numbers</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <h3>Position</h3>
+                <div class="button-group" id="positionGroup">
+                    <!-- Positions will be populated dynamically based on the range data -->
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Action Type</h3>
+                <div class="button-group" id="actionGroup">
+                    <button value="rfi" class="active">RFI</button>
+                    <button value="facing_raise">vs Raise</button>
+                    <button value="vs_3bet">vs 3-Bet</button>
+                    <button value="vs_limp">vs Limp</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Strategy</h3>
+                <div class="button-group strategy-group" id="strategyGroup">
+                    <!-- Strategy buttons will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="range-section">
+                <div id="rangeChart" class="range-chart"></div>
+            </div>
+
+            <div class="tips-section">
+                <h3>Post-Flop Tips</h3>
+                <div id="tipsContent" class="tips-content">
+                    Select a position and action type to see post-flop tips.
+                </div>
+
+                <div class="legend-container">
+                    <div class="legend-section">
+                        <h4>Action Colors:</h4>
+                        <div class="legend-items">
+                            <div class="legend-item">
+                                <div class="legend-color raise"></div>
+                                <span>Raise/RFI</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color call"></div>
+                                <span>Call</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color threeBet"></div>
+                                <span>3-Bet</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color fourBet"></div>
+                                <span>4-Bet</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="legend-section">
+                        <h4>Hand Types:</h4>
+                        <div class="legend-items">
+                            <div class="legend-item text-example suited">
+                                <span>Suited (e.g., AKs)</span>
+                            </div>
+                            <div class="legend-item text-example offsuit">
+                                <span>Offsuit (e.g., AKo)</span>
+                            </div>
+                            <div class="legend-item text-example pair">
+                                <span>Pairs (e.g., AA)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="legend-section patterns-section">
+                        <h4>Patterns:</h4>
+                        <div id="patternsContent" class="patterns-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let rangeData = null;
+        let tipsData = null;
+        let currentAction = 'rfi';
+        let currentPosition = null;
+        let currentStrategy = null;
+        const allPositions = ['SB', 'BB', 'UTG', 'UTG+1', 'MP', 'CO', 'BTN'];
+        
+        // Load range data and tips
+        async function loadRangeData() {
+            try {
+                // Load both GTO and exploitative strategies
+                const [gtoRangeResponse, expRangeResponse, tipsResponse] = await Promise.all([
+                    fetch('ranges/40p_gto_7pos.json'),
+                    fetch('ranges/40p_exp_7pos.json'),
+                    fetch('ranges/40p_gto_7pos_tips.json')
+                ]);
+
+                const gtoData = await gtoRangeResponse.json();
+                const expData = await expRangeResponse.json();
+                tipsData = await tipsResponse.json();
+                
+                // Verify metadata and structure for both strategies
+                if (!gtoData.metadata || !gtoData.ranges || !expData.metadata || !expData.ranges) {
+                    throw new Error('Invalid range file structure');
+                }
+
+                // Store both strategies in rangeData
+                rangeData = {
+                    'GTO 7-Position': gtoData,
+                    'EXP 7-Position': expData
+                };
+
+                // Update strategy buttons and initialize UI
+                updateStrategyButtons();
+                initializeUI();
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        function updateTips() {
+            if (!currentPosition || !currentAction || !tipsData) return;
+
+            const tipsContent = document.getElementById('tipsContent');
+            const config = tipsData.configurations.find(c => 
+                c.position === currentPosition.toUpperCase() && 
+                c.action_type === currentAction &&
+                c.strategy === 'gto40_7pos'
+            );
+
+            if (config) {
+                tipsContent.textContent = config.tips;
+            } else {
+                tipsContent.textContent = 'No specific tips available for this configuration.';
+            }
+        }
+
+        function updateStrategyButtons() {
+            const strategyGroup = document.getElementById('strategyGroup');
+            strategyGroup.innerHTML = '';
+            
+            // Add buttons for both strategies
+            const gtoButton = document.createElement('button');
+            gtoButton.value = 'GTO 7-Position';
+            gtoButton.textContent = 'GTO vs 40% VPIP Villain 8-Max';
+            gtoButton.classList.add('active');
+            
+            const expButton = document.createElement('button');
+            expButton.value = 'EXP 7-Position';
+            expButton.textContent = 'Exploitative vs 40% VPIP Villain 8-Max';
+            
+            strategyGroup.appendChild(gtoButton);
+            strategyGroup.appendChild(expButton);
+            
+            // Set initial strategy
+            currentStrategy = 'GTO 7-Position';
+        }
+
+        function initializeUI() {
+            // Set up position buttons based on metadata from the range file
+            const positionGroup = document.getElementById('positionGroup');
+            const supportedPositions = rangeData['GTO 7-Position'].metadata.supported_positions;
+            
+            positionGroup.innerHTML = supportedPositions.map(pos => 
+                `<button value="${pos.toLowerCase()}"${currentPosition === pos.toLowerCase() ? ' class="active"' : ''}>${pos}</button>`
+            ).join('');
+
+            // Set up event listeners
+            document.getElementById('actionGroup').addEventListener('click', handleActionClick);
+            positionGroup.addEventListener('click', handlePositionClick);
+            document.getElementById('strategyGroup').addEventListener('click', handleStrategyClick);
+
+            // Initialize the range chart
+            initializeRangeChart();
+            
+            // Select first position by default
+            if (supportedPositions.length > 0) {
+                const firstPosButton = positionGroup.querySelector('button');
+                if (firstPosButton) {
+                    firstPosButton.click();
+                }
+            }
+
+            // Show the legend by default
+            document.querySelector('.legend-container').style.display = 'flex';
+        }
+
+        function handleActionClick(event) {
+            if (event.target.tagName !== 'BUTTON') return;
+            
+            document.querySelectorAll('#actionGroup button').forEach(btn => 
+                btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            currentAction = event.target.value;
+            updateDisplay();
+            updateTips();
+        }
+
+        function handlePositionClick(event) {
+            if (event.target.tagName !== 'BUTTON') return;
+            
+            document.querySelectorAll('#positionGroup button').forEach(btn => 
+                btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            currentPosition = event.target.value;
+            updateDisplay();
+            updateTips();
+        }
+
+        function handleStrategyClick(event) {
+            if (event.target.tagName !== 'BUTTON') return;
+
+            document.querySelectorAll('#strategyGroup button').forEach(btn => 
+                btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            currentStrategy = event.target.value;
+            
+            // Update position buttons based on the selected strategy's metadata
+            const positionGroup = document.getElementById('positionGroup');
+            const supportedPositions = rangeData[currentStrategy].metadata.supported_positions;
+            
+            positionGroup.innerHTML = supportedPositions.map(pos => 
+                `<button value="${pos.toLowerCase()}"${currentPosition === pos.toLowerCase() ? ' class="active"' : ''}>${pos}</button>`
+            ).join('');
+
+            updateDisplay();
+            updateTips();
+        }
+
+        function initializeRangeChart() {
+            const chart = document.getElementById('rangeChart');
+            const ranks = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
+            
+            chart.innerHTML = '';
+            ranks.forEach(rank1 => {
+                ranks.forEach(rank2 => {
+                    const cell = document.createElement('div');
+                    cell.className = 'range-chart-cell';
+                    
+                    // For pairs
+                    if (rank1 === rank2) {
+                        cell.textContent = rank1 + rank2;
+                    }
+                    // For non-pairs, always put higher ranked card first
+                    else {
+                        const idx1 = ranks.indexOf(rank1);
+                        const idx2 = ranks.indexOf(rank2);
+                        if (idx1 < idx2) {
+                            // rank1 is higher ranked
+                            cell.textContent = rank1 + rank2 + 's';
+                        } else {
+                            // rank2 is higher ranked
+                            cell.textContent = rank2 + rank1 + 'o';
+                        }
+                    }
+                    
+                    chart.appendChild(cell);
+                });
+            });
+        }
+
+        function getCumulativeRange(action, position) {
+            if (!rangeData || !currentStrategy || !position) {
+                console.log('Missing required data:', { rangeData: !!rangeData, currentStrategy, position });
+                return new Map();
+            }
+
+            const vpipKey = 'vpip_40';
+            const data = rangeData[currentStrategy]?.ranges?.[action]?.[vpipKey];
+            
+            if (!data) {
+                console.log('No data found for:', { strategy: currentStrategy, action, vpipKey });
+                return new Map();
+            }
+
+            const range = new Map(); // Using Map to store hand -> action type mapping
+            const positionsOrder = ['utg', 'utg1', 'mp', 'co', 'btn', 'sb', 'bb'];
+            // Normalize the position name to match our internal format
+            const normalizedPosition = position.toLowerCase().replace('+1', '1');
+            const currentPosIndex = positionsOrder.indexOf(normalizedPosition);
+
+            if (currentPosIndex === -1) {
+                console.log('Invalid position:', position);
+                return range;
+            }
+
+            // Add hands from base range first
+            if (data.base) {
+                if (action === 'rfi') {
+                    // For RFI, use the 'open' array
+                    if (data.base.open) {
+                        data.base.open.forEach(hand => {
+                            range.set(hand, 'raise');
+                        });
+                    }
+                } else {
+                    // For other actions, check all possible action types
+                    ['call', 'threeBet', 'fourBet', 'raise'].forEach(actionType => {
+                        if (data.base[actionType]) {
+                            data.base[actionType].forEach(hand => {
+                                range.set(hand, actionType);
+                            });
+                        }
+                    });
+                }
+            }
+
+            // Add position-specific hands up to and including current position
+            for (let i = 0; i <= currentPosIndex; i++) {
+                const posKey = positionsOrder[i] + '_add';
+                if (data[posKey]) {
+                    if (action === 'rfi') {
+                        // For RFI positions, handle both array and object formats
+                        if (Array.isArray(data[posKey])) {
+                            data[posKey].forEach(hand => {
+                                range.set(hand, 'raise');
+                            });
+                        } else if (data[posKey].open) {
+                            data[posKey].open.forEach(hand => {
+                                range.set(hand, 'raise');
+                            });
+                        }
+                    } else {
+                        // For other actions, handle both array and object formats
+                        if (Array.isArray(data[posKey])) {
+                            data[posKey].forEach(hand => {
+                                range.set(hand, 'call'); // Default to call if not specified
+                            });
+                        } else {
+                            ['call', 'threeBet', 'fourBet', 'raise'].forEach(actionType => {
+                                if (data[posKey][actionType]) {
+                                    data[posKey][actionType].forEach(hand => {
+                                        range.set(hand, actionType);
+                                    });
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+
+            return range;
+        }
+
+        function updateDisplay() {
+            if (!currentAction || !currentPosition) {
+                console.log('Missing action or position:', { currentAction, currentPosition });
+                return;
+            }
+
+            const range = getCumulativeRange(currentAction, currentPosition);
+            const cells = document.querySelectorAll('.range-chart-cell');
+            
+            cells.forEach(cell => {
+                // Reset all classes first
+                cell.className = 'range-chart-cell';
+                
+                const hand = cell.textContent;
+                // Add basic hand type styling
+                if (hand.length === 2) { // Pair
+                    cell.classList.add('pair');
+                } else if (hand.endsWith('s')) { // Suited
+                    cell.classList.add('suited');
+                } else if (hand.endsWith('o')) { // Offsuit
+                    cell.classList.add('offsuit');
+                }
+
+                // Check if hand is in range and add appropriate action class
+                if (range.has(hand)) {
+                    cell.classList.add('included');
+                    const actionType = range.get(hand);
+                    if (actionType) {
+                        cell.classList.add(actionType);
+                    }
+                }
+            });
+
+            // Update patterns section
+            const patternsSection = document.querySelector('.patterns-section');
+            const patternsContent = document.getElementById('patternsContent');
+            
+            const data = rangeData[currentStrategy]?.ranges?.[currentAction]?.vpip_40;
+            if (data) {
+                let patternsByType = new Map();
+                
+                // Get base patterns first
+                if (data.base) {
+                    if (currentAction === 'rfi') {
+                        if (data.base.patterns) {
+                            patternsByType.set('Base', data.base.patterns);
+                        }
+                    } else {
+                        ['call', 'threeBet', 'fourBet', 'raise'].forEach(actionType => {
+                            const key = actionType + '_patterns';
+                            if (data.base[key]) {
+                                patternsByType.set(`Base ${actionType}`, data.base[key]);
+                            }
+                        });
+                    }
+                }
+                
+                // Get position-specific patterns
+                const posKey = currentPosition.toLowerCase().replace('+', '1') + '_add';
+                if (data[posKey]) {
+                    if (currentAction === 'rfi') {
+                        if (data[posKey].patterns) {
+                            patternsByType.set(currentPosition.toUpperCase(), data[posKey].patterns);
+                        }
+                    } else if (typeof data[posKey] === 'object') {
+                        ['call', 'threeBet', 'fourBet', 'raise'].forEach(actionType => {
+                            const key = actionType + '_patterns';
+                            if (data[posKey][key]) {
+                                patternsByType.set(`${currentPosition.toUpperCase()} ${actionType}`, data[posKey][key]);
+                            }
+                        });
+                    }
+                }
+                
+                // Format and display patterns
+                if (patternsByType.size > 0) {
+                    const formattedPatterns = [];
+                    for (const [type, typePatterns] of patternsByType) {
+                        if (typePatterns && typePatterns.length > 0) {
+                            formattedPatterns.push(`${type}: ${typePatterns.join(', ')}`);
+                        }
+                    }
+                    patternsContent.textContent = formattedPatterns.join(' | ');
+                    patternsSection.style.display = 'flex';
+                } else {
+                    patternsSection.style.display = 'none';
+                }
+            } else {
+                patternsSection.style.display = 'none';
+            }
+        }
+
+        // Load data and initialize the application
+        loadRangeData();
+    </script>
+</body>
+</html> 

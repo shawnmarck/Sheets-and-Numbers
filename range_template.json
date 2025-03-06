@@ -1,0 +1,134 @@
+{
+    "version": "1.1",
+    "author": "string (required): Name of the range author",
+    "description": "string (required): Description of the range set",
+    "metadata": {
+        "positions": ["SB", "BB", "UTG", "UTG+1", "MP", "CO", "BTN"],
+        "supported_positions": ["array of positions that this range set supports"]
+    },
+    "ranges": {
+        "_comment": "Each key in ranges represents a different action type",
+        "rfi": {
+            "_comment": "RFI (Raise First In) ranges",
+            "vpip_X": {
+                "_comment": "X represents the VPIP percentage (e.g., vpip_40 for 40% VPIP)",
+                "base": {
+                    "_comment": "Base range for UTG position",
+                    "open": ["array of hands (required): List of hands to open-raise"],
+                    "patterns": ["array of patterns (required): Shorthand notations for ranges"]
+                },
+                "sb_add": ["array of hands (optional): Additional hands to add in SB position"],
+                "bb_add": ["array of hands (optional): Additional hands to add in BB position"],
+                "utg1_add": ["array of hands (required): Additional hands to add in UTG+1 position"],
+                "mp_add": ["array of hands (required): Additional hands to add in MP position"],
+                "co_add": ["array of hands (required): Additional hands to add in CO position"],
+                "btn_add": ["array of hands (required): Additional hands to add in BTN position"]
+            }
+        },
+        "facing_raise": {
+            "_comment": "Ranges for when facing a raise",
+            "vpip_X": {
+                "base": {
+                    "call": ["array of hands (required): List of hands to call with"],
+                    "call_patterns": ["array of patterns (required): Shorthand notations for call range"],
+                    "threeBet": ["array of hands (required): List of hands to 3-bet with"],
+                    "threeBet_patterns": ["array of patterns (required): Shorthand notations for 3-bet range"]
+                },
+                "sb_add": {
+                    "call": ["array of hands (optional): Additional hands to call in SB"],
+                    "threeBet": ["array of hands (optional): Additional hands to 3-bet in SB"]
+                },
+                "bb_add": {
+                    "call": ["array of hands (optional): Additional hands to call in BB"],
+                    "threeBet": ["array of hands (optional): Additional hands to 3-bet in BB"]
+                },
+                "utg1_add": {
+                    "call": ["array of hands (required): Additional hands to call in UTG+1"],
+                    "threeBet": ["array of hands (required): Additional hands to 3-bet in UTG+1"]
+                },
+                "mp_add": {
+                    "call": ["array of hands (required): Additional hands to call in MP"],
+                    "threeBet": ["array of hands (required): Additional hands to 3-bet in MP"]
+                },
+                "co_add": {
+                    "call": ["array of hands (required): Additional hands to call in CO"],
+                    "threeBet": ["array of hands (required): Additional hands to 3-bet in CO"]
+                },
+                "btn_add": {
+                    "call": ["array of hands (required): Additional hands to call in BTN"],
+                    "threeBet": ["array of hands (required): Additional hands to 3-bet in BTN"]
+                }
+            }
+        },
+        "vs_3bet": {
+            "_comment": "Ranges for when facing a 3-bet",
+            "vpip_X": {
+                "base": {
+                    "call": ["array of hands (required): List of hands to call with"],
+                    "call_patterns": ["array of patterns (required): Shorthand notations for call range"],
+                    "fourBet": ["array of hands (required): List of hands to 4-bet with"],
+                    "fourBet_patterns": ["array of patterns (required): Shorthand notations for 4-bet range"]
+                },
+                "sb_add": {
+                    "call": ["array of hands (optional): Additional hands to call in SB"],
+                    "fourBet": ["array of hands (optional): Additional hands to 4-bet in SB"]
+                },
+                "bb_add": {
+                    "call": ["array of hands (optional): Additional hands to call in BB"],
+                    "fourBet": ["array of hands (optional): Additional hands to 4-bet in BB"]
+                },
+                "utg1_add": {
+                    "call": ["array of hands (required): Additional hands to call in UTG+1"],
+                    "fourBet": ["array of hands (required): Additional hands to 4-bet in UTG+1"]
+                },
+                "mp_add": {
+                    "call": ["array of hands (required): Additional hands to call in MP"],
+                    "fourBet": ["array of hands (required): Additional hands to 4-bet in MP"]
+                },
+                "co_add": {
+                    "call": ["array of hands (required): Additional hands to call in CO"],
+                    "fourBet": ["array of hands (required): Additional hands to 4-bet in CO"]
+                },
+                "btn_add": {
+                    "call": ["array of hands (required): Additional hands to call in BTN"],
+                    "fourBet": ["array of hands (required): Additional hands to 4-bet in BTN"]
+                }
+            }
+        },
+        "vs_limp": {
+            "_comment": "Ranges for when facing a limp",
+            "vpip_X": {
+                "base": {
+                    "call": ["array of hands (required): List of hands to call/limp behind with"],
+                    "call_patterns": ["array of patterns (required): Shorthand notations for call range"],
+                    "raise": ["array of hands (required): List of hands to raise with"],
+                    "raise_patterns": ["array of patterns (required): Shorthand notations for raise range"]
+                },
+                "sb_add": {
+                    "call": ["array of hands (optional): Additional hands to call in SB"],
+                    "raise": ["array of hands (optional): Additional hands to raise in SB"]
+                },
+                "bb_add": {
+                    "call": ["array of hands (optional): Additional hands to call in BB"],
+                    "raise": ["array of hands (optional): Additional hands to raise in BB"]
+                },
+                "utg1_add": {
+                    "call": ["array of hands (required): Additional hands to call in UTG+1"],
+                    "raise": ["array of hands (required): Additional hands to raise in UTG+1"]
+                },
+                "mp_add": {
+                    "call": ["array of hands (required): Additional hands to call in MP"],
+                    "raise": ["array of hands (required): Additional hands to raise in MP"]
+                },
+                "co_add": {
+                    "call": ["array of hands (required): Additional hands to call in CO"],
+                    "raise": ["array of hands (required): Additional hands to raise in CO"]
+                },
+                "btn_add": {
+                    "call": ["array of hands (required): Additional hands to call in BTN"],
+                    "raise": ["array of hands (required): Additional hands to raise in BTN"]
+                }
+            }
+        }
+    }
+} 
